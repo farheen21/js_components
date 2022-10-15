@@ -1,14 +1,26 @@
 
-const calcArea = document.querySelector("textarea");
+// TODO 
+// ADD different operater's functionality 
+let string = '';
+let buttons = document.querySelectorAll("button");
 
-const addNums = text => {
-    let { value } = calcArea;
-    
-    // This make sure that 0 and dot should not be added
-    const ruleA = value.length === 0 && text === ".";
+Array.from(buttons).forEach((button) => {
+  button.addEventListener('click' , (e)=> {
 
-    // if ruleA is not true;
-    if(!ruleA) {
-      calcArea.value += text;
-    }
-}
+   if (e.target.innerHTML == '=') {
+     string = eval(string);
+     document.querySelector('#view').value = string;
+   }
+   else if (e.target.innerHTML == 'C') {
+    string = "";
+    document.querySelector('#view').value = string;
+  }
+  
+   else {
+    console.log(e.target);
+    string = string + e.target.innerHTML;
+    console.log(string);
+    document.querySelector('#view').value = string;
+   }
+  })
+})
