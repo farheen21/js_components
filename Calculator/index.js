@@ -15,7 +15,7 @@ Array.from(buttons).forEach((button) => {
     string = "";
     document.querySelector('#view').value = string;
   }
-  
+
    else {
     console.log(e.target);
     string = string + e.target.innerHTML;
@@ -24,3 +24,12 @@ Array.from(buttons).forEach((button) => {
    }
   })
 })
+
+// let stringA = '';
+// let buttonsA = document.querySelectorAll("buttons");
+
+// Array.from(buttonsA).forEach((btn) => {
+//   btn.addEventListener('click' , ()=>{
+
+//   })
+// })
